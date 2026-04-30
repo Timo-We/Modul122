@@ -13,7 +13,7 @@ show_disk_usage() {
     df -h
 }
 
-cleanup_temp() {
+cleanup_temp() {
     echo "Bereinige Temp-Dateien (älter als 1 Tag)"
 
     find "$TEMP_DIR" -depth -mtime +0 -print -exec rm -rf {} + 2>/dev/null
@@ -85,7 +85,7 @@ auto_mode() {
 
 }
 
-if [ "$1" == "--auto"]; then
+if [ "$1" = "--auto" ]; then
 	auto_mode
 else
 	menu
